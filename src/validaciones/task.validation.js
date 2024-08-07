@@ -14,8 +14,6 @@ const validateCreate = [
         .isLength({ min: 10 }).withMessage('la descripción tiene que tener un mínimo de 10 caracteres'),
     check('isComplete')
         .exists().withMessage('es obligatorio especificar si está completado')
-        .notEmpty().withMessage('es obligatorio agregar la información')
-        .not()
         .isBoolean().withMessage('el campo "isComplete" debe ser de tipo booleano'),
     (req, res, next) => {
         validateResult(req, res, next)

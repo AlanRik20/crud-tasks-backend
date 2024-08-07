@@ -1,7 +1,9 @@
-const {insertTask, viewTasks} = require("../controllers/user.constrollers")
+const {insertTask, viewTasks, deleteTasks, updateTasks} = require("../controllers/user.constrollers")
 const router = require('express').Router()
 
-router.post("/task/insert", insertTask)
-router.get("/tasks/view", viewTasks)
+router.post("/tasks", insertTask)
+router.get("/tasks", viewTasks)
+router.delete("/task/:id", deleteTasks)
+router.put("/task/:id", updateTasks)
 
 module.exports=router

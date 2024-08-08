@@ -29,5 +29,22 @@ cd tu-repositorio`
 cd tu-repositorio`
 
 ```
-$ npm install express
+$ npm install 
 ```
+
+3. __Configura la Base de Datos:__
+- Crea una base de datos y una tabla en MySQL usando XAMPP.
+- Ejemplo de SQL para crear una Base de Datos y tabla
+
+```SQL
+CREATE DATABASE tasks_db
+
+CREATE TABLE tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    description TEXT,
+    isComplete BOOLEAN
+);
+```
+4. __Configura las variables de entorno:__
+- Crea un archivo __'.env'__

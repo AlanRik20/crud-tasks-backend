@@ -1,4 +1,4 @@
-const { conex } = require("../db/conex");
+import { conex } from "../db/conex.js";
 
 const insertTask = async (req, res) => {
     const { title, description, isComplete } = req.body;
@@ -69,5 +69,5 @@ const updateTasks = async (req, res)=>{
 
 }
 
-module.exports = { insertTask, viewTasks, deleteTasks, updateTasks, viewTaskById };
+export { insertTask, viewTasks, deleteTasks, updateTasks, viewTaskById };
 

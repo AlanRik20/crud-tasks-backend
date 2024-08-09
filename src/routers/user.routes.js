@@ -1,11 +1,13 @@
-const {insertTask, viewTasks, deleteTasks, updateTasks, viewTaskById} = require("../controllers/user.constrollers")
-const {validateCreate} = require("../validaciones/task.validation")
-const router = require('express').Router()
+import { insertTask, viewTasks, deleteTasks, updateTasks, viewTaskById } from "../controllers/user.constrollers.js"
+import { validateCreate } from "../validaciones/task.validation.js"
 
-router.post("/tasks", validateCreate, insertTask)
-router.get("/tasks", viewTasks)
-router.delete("/task/:id", deleteTasks)
-router.put("/task/:id", updateTasks)
-router.get("/task/:id", viewTaskById)
+import { Router } from "express"
+const taskRouter = Router()
 
-module.exports=router
+taskRouter.post("/", validateCreate, insertTask)
+taskRouter.get("/", viewTasks)
+taskRouter.delete("/:id", deleteTasks)
+taskRouter.put("/:id", updateTasks)
+taskRouter.get("/:id", viewTaskById)
+
+export {taskRouter}

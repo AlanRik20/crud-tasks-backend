@@ -1,6 +1,6 @@
-const mysql = require('mysql2');
+import { createConnection } from 'mysql2';
 
-const conex = mysql.createConnection({
+const conex = createConnection({
     host: 'localhost',
     user: 'root',
     password: '', // Añade tu contraseña si es necesario
@@ -15,4 +15,4 @@ conex.connect((err) => {
     console.log("Conectado a la BD");
 });
 
-module.exports = { conex };
+export { conex };

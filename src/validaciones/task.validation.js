@@ -1,5 +1,5 @@
-const { check } = require("express-validator")
-const { validateResult } = require("../helpers/validate.helpers")
+import { check } from "express-validator"
+import { validateResult } from "../helpers/validate.helpers.js"
 
 const validateCreate = [
     check('title')
@@ -21,4 +21,4 @@ const validateCreate = [
 
 ]
 
-module.exports = { validateCreate }
+export { validateCreate }

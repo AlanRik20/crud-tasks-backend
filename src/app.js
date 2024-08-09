@@ -1,11 +1,11 @@
-const express = require("express");
+import express, { json } from "express";
 const app = express();
 const PORT = 4000;
 
-app.use(express.json());
+app.use(json());
 
-const router = require("./routers/user.routes");
+import {taskRouter} from "./routers/user.routes.js";
 
-app.use( router); 
+app.use( "/api/tasks",taskRouter); 
 
 app.listen(PORT, () => console.log(`Servidor funcionando en ${PORT}`));
